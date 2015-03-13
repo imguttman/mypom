@@ -1,0 +1,53 @@
+
+<div class='siteheader'>
+  <h4>PO-MY-DORO</h4>
+</div>
+<% if session[:id] && @user %>
+  <%= erb :_userhome %>
+
+  <div class='poms_list'>
+  </div>
+
+  <div class='pom_input_fields'>
+  </div>
+
+  <div class='video_container'>
+  </div>
+  <div class='timer'>
+  </div>
+
+  <div class='break_timer'>
+  </div>
+
+
+  <form action='/logout' method='post' class='signout'>
+    <input type='submit' value='Sign out!'>
+  </form>
+
+<% else %>
+
+<div class='signin'>
+
+  <form action='/register' method='post' >
+    <%= flash[:errors] if flash[:errors]!=nil %>
+    <p><label for="username">Username</label><input type='text' name='username' placeholder='username'></p>
+
+    <p><label for="email">Email </label>   <input type='text' name='email' placeholder='e.g. isaac@time.com'></p>
+
+    <p><label for="password_hash">Password   </label><input type='password' name='password_hash' placeholder='minimum 6 characters'></p>
+    <input type='submit' value='Register!'>
+  </form>
+
+  <br></br>
+  <br></br>
+
+  <form action='/login' method='post'>
+    <p><label for="username">Username   </label><input type='text' name='username' placeholder='username'></p>
+
+    <p><label for="password_hash">Password   </label><input type='password' name='password_hash' placeholder='minimum 6 characters'></p>
+    <input type='submit' value='Sign in!'>
+  </form>
+
+</div>
+
+<% end %>

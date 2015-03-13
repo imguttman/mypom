@@ -1,0 +1,18 @@
+<!-- Loop through Tasks.all and create divs that will house 'start!', 'edit,' 'delete', and 'schedule' button -->
+<% @user = User.find(session[:id]) %>
+<% Task.all.reverse.each do |task| %>
+  <div class='single_pom'>
+    <div class='pom_title'>
+      <h3> <%= task.name %> </h3>
+    </div>
+    <div class='pom_contents'>
+      <h5>Length: <span class='pom_duration'><%= task.duration %></span> minutes </h5>
+      <h5>Rest: <span class='break_duration'><%= task.break_duration%></span> minutes </h5>
+      <h5> Category: <%= task.category %> </h5>
+
+      <a href=<%=task.id%> class='edit'>Edit</a>  <a href=<%=task.id%> class='delete'>Delete</a> <a href='#' class='start_pom'>Do it</a>
+    </div>
+  </div>
+  <br>
+<% end %>
+

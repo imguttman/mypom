@@ -1,0 +1,20 @@
+<% if session[:id] && @user%>
+
+  <div class='pom_create'>
+    <form action=<%= @user.id %> method='post'>
+      <p><label for='name'>What's the task?   </label><input type='text' name='name' placeholder='keep it simple'></p>
+
+      <p><label for='category'>What category does this Pom fall under?   </label><input type='text' name='category' placeholder='e.g. rabbit-hole'></p>
+
+      <p><label for='duration'>Pom time  </label><input type='number' name='duration' placeholder='Default is 25 minutes'></p>
+
+      <p><label for="break_duration">Break time   </label><input type='number' name='break_duration' placeholder='Default is 5 minutes'></p>
+
+      <input type='submit' value='Add pom!'>
+    </form>
+  </div>
+
+<% else %>
+
+  <p>You must be signed in to see this content.</p>
+<% end %>

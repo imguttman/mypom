@@ -1,0 +1,22 @@
+<% if session[:id]%>
+
+  <div class='pom_edit'>
+    <form action=<%= @task.id %> method='post'>
+      <input type="hidden" name="_method" value="put">
+
+      <p><label for='name'>What's the task?   </label><input type='text' name='name' placeholder=<%=@task.name%>></p>
+
+      <p><label for='category'>What category does this Pom fall under?   </label><input type='text' name='category' placeholder=<%=@task.category%>></p>
+
+      <p><label for='duration'>Pom time  </label><input type='number' name='duration' placeholder=<%=@task.duration%>></p>
+
+      <p><label for="break_duration">Break time   </label><input type='number' name='break_duration' placeholder=<%=@task.break_duration%>></p>
+
+      <input type='submit' value='Update pom!'>
+    </form>
+  </div>
+
+<% else %>
+
+  <p>You must be signed in to see this content.</p>
+<% end %>

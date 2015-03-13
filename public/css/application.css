@@ -1,0 +1,152 @@
+* {
+  font-family: 'Vollkorn', serif;
+  /*background-color: #CCEAFF;*/
+  background-image: url('../img/concrete_seamless.png');
+}
+a {
+  color:#CF8020;
+}
+
+button {
+
+  border-top: 1px solid #96d1f8;
+  background: #65a9d7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#86b8d9));
+  background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+  background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+  background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+  background: -o-linear-gradient(top, #3e779d, #65a9d7);
+}
+
+body {
+  margin: 5%;
+}
+
+.siteheader{
+  width:100%;
+  font-size: 4em;
+  text-align: center;
+}
+.task_list{
+  margin-top:20px;
+}
+.single_pom {
+
+  width: 45%;
+  height: 10%;
+  border: 1px dashed black;
+  text-align: center;
+  margin: auto;
+  margin-top:30px;
+  padding-bottom: 15px;
+  color: #5D4A8C;
+}
+.pom_title {
+  font-size: 2em;
+
+}
+.pom_contents{
+  margin-top: -4%;
+  font-size: 1em;
+
+}
+
+.timer {
+  padding-top: 10%;
+  font-size: 8em;
+  width: 55%;
+  height: 20%;
+  text-align: center;
+  margin: auto;
+  font-family: 'Press Start 2P', cursive;
+
+
+}
+.start_timer{
+  font-size: .15em;
+  margin-top: 5%;
+}
+.timer button {
+  font-family: sans-serif;
+}
+
+.break_timer{
+  /*padding: 5%;*/
+  font-size: 5em;
+ /* width: /*55*/
+  height: 20%;
+  text-align: center;
+  /*margin-right: 10%;*/
+  margin-top:12%%;
+  float:right;
+  font-family: 'Press Start 2P', cursive;
+
+}
+
+.break_timer button{
+  font-size: .15em;
+}
+
+.user_profile{
+  position: relative;
+  text-align: center;
+  margin-top: -5%;
+
+}
+
+.video_container {
+  padding: 5%;
+
+  height: 40%;
+  float: left;
+  margin:auto;
+
+}
+
+.signin {
+  width: 30%;
+  margin: auto;
+}
+
+.signin input{
+  background-color: gray;
+  float:right;
+  margin-right:15%;
+}
+
+.pom_input_fields {
+  width:30%;
+  margin: auto;
+  margin-top:5%;
+}
+
+
+.signout {
+  margin-right:auto;
+  margin-left:auto;
+  margin-top: 15%;
+  width:10%;
+}
+
+.signout input {
+  border-top: 1px solid #96d1f8;
+  background: #65a9d7;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#86b8d9));
+  background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+  background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+  background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+  background: -o-linear-gradient(top, #3e779d, #65a9d7);
+}
+
+
+
+
+
+/*
+div {
+  font-family: 'Playfair Display', serif;
+  background-color: yellow;
+  border: 2px, solid, blue;
+  border-radius: 15px;
+}
+*/
