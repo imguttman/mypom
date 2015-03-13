@@ -7,7 +7,7 @@ post '/login' do
   @user = User.find_by(username: params[:username])
   if @user && @user.password == params[:password_hash]
     session[:id] = @user.id
-    redirect '/'
+    erb :index
   else
     flash[:errors] = "try again"
     erb :index
@@ -19,7 +19,7 @@ post '/register' do
   @user.password = params[:password_hash]
   if @user.save
     session[:id] = @user.id
-    redirect '/'
+    erb :index
   else
     flash[:errors] = "try again" #@user.errors.full_messages
     erb :index
