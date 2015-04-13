@@ -45,10 +45,9 @@ post '/:user_id/task/new' do
   erb :_pomlist, layout: false
 end
 
-delete '/:user_id/task/delete' do
-  erb :_pomlist, layout: false
-
-end
+# delete '/:user_id/task/delete' do
+#   erb :_pomlist, layout: false
+# end
 
 get '/:task_id/edit' do
   @task = Task.find(params[:task_id])

@@ -16,19 +16,19 @@ $(document).ready(function() {
 
   }
 
-  var addBreakTimer = function(){
+  var addBreakTimer = function(breakDuration){
     // $('.break_timer').empty();
     $('.break_timer').show();
     var timerElement = document.getElementsByClassName('break_timer')[0];
-    var breakTimer = new Timer(0, timerElement,'break_timer');
+    var breakTimer = new Timer(breakDuration, timerElement,'break_timer');
     $('.break_timer').append('<p><button>Start your break!</button></p>')
     var startBreakButton = $('.break_timer button')[0]
 
     startBreakButton.addEventListener('click', breakTimer.tick.bind(breakTimer));
   }
 
-  var Timer = function(minutes, element, timerType){
-    this.model = new Timer.Model(minutes, timerType);
+  var Timer = function(minutes, element, timerType, breakDuration){
+    this.model = new Timer.Model(minutes, timerType, breakDuration);
     this.view = new Timer.View(element);
     this.view.render(this.model);
   }
@@ -44,10 +44,11 @@ $(document).ready(function() {
     }
   }
 
-  Timer.Model = function(minutes, timerType){
+  Timer.Model = function(minutes, timerType, breakDuration){
     this.minutes = minutes;
-    this.seconds = 5;
+    this.seconds = 0;
     this.timerType = timerType;
+    this.breakDuration = breakDuration;
   }
 
   Timer.Model.prototype.tick = function(){
@@ -60,7 +61,7 @@ $(document).ready(function() {
           addVideoDiv();
 
           $('.break_timer').empty();
-          addBreakTimer();
+          addBreakTimer(this.breakDuration);
           gongSound();
 
 
@@ -113,10 +114,12 @@ $(document).ready(function() {
       $('.timer').empty();
       $('.timer').show();
       var timerElement = document.getElementsByClassName('timer')[0];
-      var timer = new Timer(pomDuration, timerElement, 'regular');
+      var timer = new Timer(pomDuration, timerElement, 'regular', breakDuration);
       console.log(timer);
-      $('.timer').append("<div class='start_timer'><button>Start!</button></div>")
-      var startButton = $('.timer button')[0]
+      $('.timer').append("<div class='start_timer'><button>Start!</button></div>");
+      var startButton = $('.timer button')[0];
+
+
       startButton.addEventListener('click', timer.tick.bind(timer));
 
 
