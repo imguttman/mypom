@@ -6,10 +6,7 @@ $(document).ready(function() {
   }
 
   var addVideoDiv = function(){
-    // var vimeoVids = []
-    var videoId = "24456787";
 
-    var apiUrl = "https://vimeo.com/api/v2/video/"+ videoId +".json"
     $('.video_container').show();
 
     $('.video_container').append("<iframe width='560' height='315' src='https://www.youtube.com/embed/6HOIX_U4FNY' frameborder='0' allowfullscreen></iframe>");
@@ -159,7 +156,7 @@ $(document).ready(function() {
         type: 'DELETE',
       })
       .done(function(response){
-        console.log("Nice you just deleted that item");
+        console.log("Nice you just deleted that item with an ajax call");
         $('.pom_input_fields').empty();
         $('.pom_input_fields').hide();
 
@@ -168,6 +165,7 @@ $(document).ready(function() {
         $('.poms_list').show();
       })
       .fail(function(error){
+        console.log("Error deleting that item with an ajax call");
 
       });
 
@@ -212,7 +210,7 @@ $(document).ready(function() {
       type:'PUT',
     })
     .done(function(response){
-      console.log('heyo you made it here and edited that shit');
+      console.log('you editied the database with ajax call');
       $('.pom_input_fields').empty();
       $('.pom_input_fields').hide();
 
@@ -221,7 +219,7 @@ $(document).ready(function() {
       $('.poms_list').show();
     })
     .fail(function(error){
-      console.log('shit your edit failed')
+      console.log('ajax edit failed')
     });
   });
 
