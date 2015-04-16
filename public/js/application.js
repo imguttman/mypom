@@ -70,13 +70,11 @@ var generatePom = function(event){
   var inputData = formDiv.serialize();
 
   var correctUrl = '/'+ formDiv.attr('action') + '/task/new';
-  console.log(correctUrl);
   $.ajax({
     url: correctUrl,
     type:'POST',
     data: inputData,
   }).done(function(response){
-    console.log(response);
     $('.poms_list').empty();
     $('.poms_list').append(response);
     $('.poms_list').show();
@@ -89,6 +87,12 @@ var generatePom = function(event){
 
 }
 $(document).ready(function() {
+
+// Ajax for Login
+
+// Ajax for Register/login
+
+
 // User homepage
   $('button.my_poms').on('click', displayUserPoms);
 // Click button to generate new pom input fields

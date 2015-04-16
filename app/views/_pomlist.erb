@@ -1,6 +1,6 @@
 <!-- Loop through Tasks.all and create divs that will house 'start!', 'edit,' 'delete', and 'schedule' button -->
 <% @user = User.find(session[:id]) %>
-<% Task.all.reverse.each do |task| %>
+<% @user.tasks.reverse.each do |task| %>
   <div class='single_pom'>
     <div class='pom_title'>
       <h3> <%= task.name %> </h3>

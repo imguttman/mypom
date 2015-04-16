@@ -94,7 +94,7 @@ Timer.View.prototype.render = function(model){
 }
 
 
-var getTimer = function(){
+var getTimer = function(pomDuration, breakDuration){
   $('.timer').empty();
   $('.timer').show();
   var timerElement = document.getElementsByClassName('timer')[0];
@@ -197,7 +197,7 @@ $(document).ready(function() {
 
 
     if ($(event.target).hasClass('start_pom')){
-      getTimer();
+      getTimer(breakDuration);
     }
     else if($(event.target).hasClass('edit')){
       getEditForm();
